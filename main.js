@@ -1,5 +1,1 @@
-console.log("hello world!")
-console.log("hello world!")
-console.log("hello world!")
-console.log("hello world!")
-console.log("hello world!")
+console.log("to começando a pegar o negocio")
