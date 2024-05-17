@@ -3,12 +3,18 @@
 int main(){
 
     FILE *file;
-    file = fopen("../data/DataBase.txt", "a");//abrindo o diretório no modo append(modificar)
 
-    fprintf(file, "\nHello, World!\n");//primeira mensagem escrita no diretório
-    fprintf(file, "Segunda mensagem no arquivo\n");//escrevendo outra mensagem
+    //abrindo o diretório no modo append(modificar)
+    file = fopen("../data/escreverDataBase.txt", "w");
 
-    fclose(file);//fechando o arquivo(boas práticas)
+    //primeira mensagem escrita no diretório
+    fprintf(file, "Hello, World!\n");
+
+    //escrevendo outra mensagem
+    fprintf(file, "Segunda mensagem no arquivo\n");
+
+    //fechando o arquivo(boas práticas)
+    fclose(file);
 
 
     return 0;
