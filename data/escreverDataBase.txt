@@ -1,0 +1,4 @@
+Olá, essa mensagem já estava aqui.
+
+Hello, World!
+Segunda mensagem no arquivo
