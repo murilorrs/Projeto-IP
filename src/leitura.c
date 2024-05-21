@@ -5,7 +5,7 @@
 #define MAX_FILENAME_SIZE 100   // Tamanho máximo permitido para o nome do arquivo
 #define MAX_PATH_SIZE (MAX_FILENAME_SIZE + sizeof(PATH_PREFIX))//Tamanho total da string. ex:(../data/cargas/DadosGraos-Carga1.txt)
 
-int leArquivo(int *ID) {
+int leArquivo() {
     FILE *file; //declarando o ponteiro do tipo FILE
     char nomeDoArquivo[MAX_FILENAME_SIZE]; //declarando um vetor que vai receber o nome do arquivo q o usuário digitar.
     char caminhoCompleto[MAX_PATH_SIZE]; //declarando um vetor que vai receber a string completa do caminho.
