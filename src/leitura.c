@@ -1,11 +1,11 @@
 #include <stdio.h>
-#include "file_header.h"
+#include <string.h>
 
 #define PATH_PREFIX "../data/cargas/"  // Diretório onde os arquivos de entrada estão armazenados
 #define MAX_FILENAME_SIZE 100   // Tamanho máximo permitido para o nome do arquivo
 #define MAX_PATH_SIZE (MAX_FILENAME_SIZE + sizeof(PATH_PREFIX))//Tamanho total da string. ex:(../data/cargas/DadosGraos-Carga1.txt)
 
-int main() {
+void leArquivo() {
     FILE *file; //declarando o ponteiro do tipo FILE
     char nomeDoArquivo[MAX_FILENAME_SIZE]; //declarando um vetor que vai receber o nome do arquivo q o usuário digitar.
     char caminhoCompleto[MAX_PATH_SIZE]; //declarando um vetor que vai receber a string completa do caminho.
@@ -23,7 +23,6 @@ int main() {
     //checa se o arquivo foi aberto corretamente
     if(file == NULL){
         printf("O arquivo nao existe.");
-        return 0;
     }
 
     char conteudoDoArquivo[400]; //Declara um vetor que vai receber o conteudo do arquivo.
@@ -32,7 +31,4 @@ int main() {
     }
 
     fclose(file);
-
-
-    return 0;
 }
