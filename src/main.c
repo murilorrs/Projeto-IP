@@ -1,9 +1,12 @@
 #include <stdio.h>
 #include "../include/leitura.h"
 
-int main(){
+int main() {
 
     leArquivo();
+
+
+    // escreveArquivo(ID, protocolo, peso, quantidadeDeAmostras, tipo, somaImpureza, somaUmidade);
 
     // int opcaoGeral, opcaoRelatorio, opcaoRelatorioQuantitativo, mesEscolhido;
 

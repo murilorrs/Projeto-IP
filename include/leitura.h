@@ -1,4 +1,4 @@
-#ifndef LEITURA_H
+#ifndef LEITURA_H 
 #define LEITURA_H
 
 void leArquivo();
