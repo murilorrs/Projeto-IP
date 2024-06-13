@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define PREFIXO "../data/" //Caso esteja executando no vscode utilize "../../data/" pois o vscode executa o terminal na pasta output.
+#define PREFIXO "../data/cargas" //Caso esteja executando no vscode utilize "../../data/" pois o vscode executa o terminal na pasta output.
 
 int main () {
 
