@@ -1,6 +1,6 @@
 #include "../include/leitura_arquivos.h"
+#include "../include/database.h"
 #include "../include/menu.h"
-#include <string.h>
 
 void carregamento() {
 
@@ -23,6 +23,12 @@ void carregamento() {
   } // Verifica se o arquivo digitado existe, se não existir exibe a mensagem
   // Caso contrário continuará o código normalmente
 
+  int mes, ano;
+  printf("Digite o mês de recebimento da carga:\n=>");
+  scanf("%d", &mes);
+  printf("Digite o ano de recebimento da carga:\n=>");
+  scanf("%d", &ano);
+
   int identificacao_carga, numero_protocolo, numero_amostras, tipo_produto;
   float peso_bruto; // Declaração das variáveis da primeira linha dos arquivos
 
@@ -43,7 +49,7 @@ void carregamento() {
 
   float diferencaPesoImpureza = 0;
   float multiplicacaoImpurezaDiferenca;
-  float pic, guc;
+  float pic, guc, pesoLimpo;
   float somatorioPesoB = 0, somatorioPesoI = 0;
 
   while (fgets(conteudoTemporario, 100, file) != NULL) // Enquanto o conteúdo lido no arquivo não for nulo, continuará lendo as linhas
@@ -62,12 +68,11 @@ void carregamento() {
 
   guc = multiplicacaoImpurezaDiferenca / diferencaPesoImpureza;
   pic = somatorioPesoI / somatorioPesoB * 100;
+  pesoLimpo = peso_bruto - ((pic * peso_bruto) / 100);
 
   fclose(file);
 
-  if (guc >= 0 && guc <= 8.5) {
-    printf("\nO Guc esta na faixa 1");
-  }
+  arquivar(identificacao_carga, numero_protocolo, mes, ano, tipo_produto, peso_bruto, pic, guc, pesoLimpo);
 
   return;
 }

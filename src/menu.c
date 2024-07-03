@@ -60,3 +60,4 @@ void limpaTerminal() {
   printf("\033[H");
   fflush(stdout);
 }
+
