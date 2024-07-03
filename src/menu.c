@@ -28,12 +28,11 @@ int main() {
       carregamento();
 
     } else if (opcaoGeral == 2) {
+      limpaTerminal();
       printf("\nEscolha uma opcao de relatorio:\n");
       printf("1: Quantitativo mensal\n");
       printf("2: Geral\n=> ");
       scanf("%d", &opcaoRelatorio);
-
-      limpaTerminal();
       if (opcaoRelatorio == 1) {
         printf("\nEscolha o modelo de relatorio quantitativo:\n");
         printf("1: Mes especifico\n");
@@ -61,7 +60,6 @@ int main() {
         limpaTerminal();
         leitura(&mesEscolhido, &opcaoRelatorioQuantitativo, &opcaoRelatorio);
       }
-      break;
 
     } else if (opcaoGeral == 3) {
       printf("\nVoce tem certeza que deseja sair?\n1 - Sim\n2 - Nao\nopcao escolhida:");
