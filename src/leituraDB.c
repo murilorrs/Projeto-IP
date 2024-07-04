@@ -1,7 +1,8 @@
-//leituraDB.c
 #include "../include/leituraDB.h"
 #include "../include/menu.h"
+#include "../include/relatorios.h"
 
+// Dados armazenados na struct. Para acessar use d.nomeDaVariavel. Ex: d.origem => origem daquele mês
 typedef struct {
   int origem;
   int carga;
@@ -24,103 +25,24 @@ void leitura(int *mes, int *opcaoRelatorioQuantitativo, int *opcaoRelatorio) {
     printf("O arquivo não foi aberto corretamente\n");
     return;
   }
-  if (*opcaoRelatorio == 1)
-
+  if (*opcaoRelatorio == 1) // Se o usuário escolher o tipo de relatório 1 => exibe o cabeçalho do relatório mensal
     cabecalhoRelatorioMes();
-  else
+
+  else // Se o usuário escolher o tipo de relatório 2 => exibe o cabeçalho do relatório geral
     cabecalhoRelatorioGeral();
 
+  // Loop que vai ler os dados em binário
   while (fread(&d, sizeof(Dados), 1, file) == 1) {
-    if (*opcaoRelatorio == 1 && *opcaoRelatorioQuantitativo == 1) {
+    if (*opcaoRelatorio == 1 && *opcaoRelatorioQuantitativo == 1) { // checa o tipo de relatório que o usuário quer
       if (*mes == d.mess)
-        mesEspecifico(d.origem, d.carga, d.percUmidade);
+        mesEspecifico(d.origem, d.carga, d.percUmidade); // Exibe o relatório de um mes específico
+
     } else if (*opcaoRelatorio == 1 && *opcaoRelatorioQuantitativo == 2)
-      mesAMes(d.origem, d.carga, d.percUmidade);
+      mesAMes(d.origem, d.carga, d.percUmidade); // Exibe o relatório de todos os meses
+
     else
-      relatorioGeral(d.origem, d.peso, d.pesoLimpo, d.tipo, d.percUmidade);
+      relatorioGeral(d.origem, d.peso, d.pesoLimpo, d.tipo, d.percUmidade); // Exibe o relatório geral
   }
 
   fclose(file);
-}
-
-void cabecalhoRelatorioMes() {
-  limpaTerminal();
-  printf("\nCOOPERATIVA AGRICOLA GRAO_DO_VALE V1.0\n");
-  printf("ANO: 2024\n");
-  printf("--------------------------------------------------------------------------\n");
-
-  printf("Origem    Carga(s)    GU Faixa 1    GU Faixa 2    GU Faixa 3    GU Extra\n");
-  printf("-------+------------+-------------+-------------+--------------+-----"
-         "-----\n");
-}
-
-void mesEspecifico(int origem, int cargas, float gUmidade) {
-  printf("%03d        %03d", origem, cargas);
-
-  if (gUmidade >= 0 && gUmidade <= 8.5)
-    printf("            X\n\n");
-  else if (gUmidade >= 8.6 && gUmidade <= 15)
-    printf("                          X\n\n");
-  else if (gUmidade >= 15 && gUmidade <= 25)
-    printf("                                       X\n\n");
-  else
-    printf("                                                     X\n\n");
-}
-
-void mesAMes(int origem, int cargas, float gUmidade) {
-  printf("%03d        %03d", origem, cargas);
-
-  if (gUmidade >= 0 && gUmidade <= 8.6)
-    printf("            X\n\n");
-  else if (gUmidade >= 8.6 && gUmidade <= 15)
-    printf("                          X\n\n");
-  else if (gUmidade >= 16 && gUmidade <= 25)
-    printf("                                       X\n\n");
-  else
-    printf("                                                     X\n\n");
-}
-
-void cabecalhoRelatorioGeral() {
-  limpaTerminal();
-  printf("\nCOOPERATIVA AGRICOLA GRAO_DO_VALE V1.0\n");
-  printf("ANO: 2024\n");
-  printf("---------------------------------------------------------------------"
-         "-----\n\n");
-
-  printf("             | Faixa 1   (umid.) | Faixa 2   (umid.) |Faixa 3    (umid.)\n");
-  printf("Ori-   Peso  | Peso      Tipo(%%) | Peso      Tipo(%%) | Peso      Tipo(%%)\n");
-  printf("Gem    Total | Limpo  Trans  Nao | Limpo  Trans  Nao | Limpo  Trans  Nao ");
-  printf("\n");
-  printf("-----+-------+-------+------+----+------+------+-----+------+------+--------\n");
-}
-
-void relatorioGeral(int origem, float pesoTotal, float pesoLimpo, int tipo, float gUmidade) {
-
-  if (gUmidade >= 0 && gUmidade <= 8.5) {
-
-    if (tipo == 0) {
-      printf("%03d    %.2f | %.2f          X  |                   |\n", origem, pesoTotal, pesoLimpo);
-    } else {
-      printf("%03d    %.2f | %.2f    X        |                   |\n", origem, pesoTotal, pesoLimpo);
-    }
-    printf("             |                   |                   |\n");
-
-  } else if (gUmidade >= 8.6 && gUmidade <= 15) {
-
-    if (tipo == 0) {
-      printf("%03d    %.2f |                   | %.2f          X  |\n", origem, pesoTotal, pesoLimpo);
-    } else {
-      printf("%03d    %.2f |                   | %.2f    X        |\n", origem, pesoTotal, pesoLimpo);
-    }
-    printf("             |                   |                   |\n");
-
-  } else if (gUmidade >= 16 && gUmidade <= 30) {
-
-    if (tipo == 0) {
-      printf("%03d    %.2f |                   |                   |  %.2f         X\n", origem, pesoTotal, pesoLimpo);
-    } else {
-      printf("%03d    %.2f |                   |                   |  %.2f    X\n", origem, pesoTotal, pesoLimpo);
-    }
-    printf("             |                   |                   |\n");
-  }
 }

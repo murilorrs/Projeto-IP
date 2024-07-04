@@ -1,8 +1,7 @@
-// leitura_arquivos.c
-
 #include "../include/leitura_arquivos.h"
 #include "../include/database.h"
 #include "../include/menu.h"
+#include "../include/relatorios.h"
 
 void carregamento() {
 
@@ -53,6 +52,8 @@ void carregamento() {
   float multiplicacaoImpurezaDiferenca;
   float pic, guc, pesoLimpo;
   float somatorioPesoB = 0, somatorioPesoI = 0;
+  int faixaA[50], faixaB[50], faixaC[50];
+  int quantidadeA = 0, quantidadeB = 0, quantidadeC = 0;
 
   while (fgets(conteudoTemporario, 100, file) != NULL) // Enquanto o conteúdo lido no arquivo não for nulo, continuará lendo as linhas
   {
@@ -73,7 +74,8 @@ void carregamento() {
   pesoLimpo = peso_bruto - ((pic * peso_bruto) / 100);
 
   fclose(file);
-
+  limpaTerminal();
+  relatorioDeCarregamento(numero_protocolo, numero_amostras, mes, ano, guc, pesoLimpo, tipo_produto, quantidadeA, quantidadeB, quantidadeC, faixaA, faixaB, faixaC, pic);
   arquivar(identificacao_carga, numero_protocolo, mes, ano, tipo_produto, peso_bruto, pic, guc, pesoLimpo);
 
   return;

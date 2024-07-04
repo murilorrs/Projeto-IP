@@ -60,6 +60,8 @@
     "*.js": "javascriptreact",
     "*.json": "jsonc",
     "leitura_arquivos.h": "c",
-    "stdio.h": "c"
+    "stdio.h": "c",
+    "leituradb.h": "c",
+    "relatorios.h": "c"
   }
 }
