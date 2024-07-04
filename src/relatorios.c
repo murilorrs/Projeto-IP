@@ -57,30 +57,30 @@ void relatorioDeCarregamento(int protocolo, int quantidadeDeAmostras, int mes, i
   printf("ANO: 2024\n");
   printf("---------------------------------------------------------------");
   printf("\nOrigem: %d           Num. de amostras: %d        Data: %d/%d\n", protocolo, quantidadeDeAmostras, mes, ano);
-  printf("Umidade(%%): %.2f%%    Peso limpo(t): %.2f       Transgenico: %d\n\n", percentualUmidade, pesoLimpo, transgenico);
+  printf("Umidade(%%): %.2f%%    Peso limpo(t): %.2f       Transgenico: %s\n\n", percentualUmidade, pesoLimpo, (transgenico == 1) ? "Sim" : "Não");
   printf("Umidade: Faixa 1                            Quant.:%d\n", quantidadeA);
   printf("Ident. das Amostras: ");
 
   for (int i = 0; i < quantidadeA; i++) {
-    printf("%d, ", faixaA[i]);
+    printf("%d - ", faixaA[i]);
   }
 
-  printf(".\n\n");
+  printf("\n\n");
 
   printf("Umidade: Faixa 2                            Quant.:%d\n", quantidadeB);
   printf("Ident. das Amostras: ");
 
   for (int i = 0; i < quantidadeB; i++) {
-    printf("%d, ", faixaB[i]);
+    printf("%d - ", faixaB[i]);
   }
 
-  printf(".\n\n");
+  printf("\n\n");
   printf("Umidade: Faixa 3                            Quant.:%d\n", quantidadeC);
   printf("Ident. das Amostras: ");
 
-  for (int i = 0; i < quantidadeB; i++) {
-    printf("%d, ", faixaC[i]);
+  for (int i = 0; i < quantidadeC; i++) {
+    printf("%d - ", faixaC[i]);
   }
 
-  printf(".\n\n");
+  printf("\n\n");
 }

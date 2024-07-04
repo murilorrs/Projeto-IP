@@ -52,12 +52,11 @@ void carregamento() {
   float multiplicacaoImpurezaDiferenca;
   float pic, guc, pesoLimpo;
   float somatorioPesoB = 0, somatorioPesoI = 0;
-  int faixaA[50], faixaB[50], faixaC[50];
+  int faixaA[50] = {}, faixaB[50] = {}, faixaC[50] = {};
   int quantidadeA = 0, quantidadeB = 0, quantidadeC = 0;
 
   while (fgets(conteudoTemporario, 100, file) != NULL) // Enquanto o conteúdo lido no arquivo não for nulo, continuará lendo as linhas
   {
-    numero_amostras++;
 
     // Aqui cada vez que o laço roda ele armazena os dados de cada amostra nas variáveis temporárias, dentro desse while faremos os cálculos com cada variável
     sscanf(conteudoTemporario, "%d %f %d %f", &identificacaoAmostra, &pesoBrutoAmostra, &pesoImpurezas, &grauUmidade);
@@ -67,6 +66,19 @@ void carregamento() {
 
     diferencaPesoImpureza += (pesoBrutoAmostra * 1000) - pesoImpurezas;
     multiplicacaoImpurezaDiferenca += (pesoBrutoAmostra * 1000 - pesoImpurezas) * grauUmidade;
+
+    if (grauUmidade >= 0 && grauUmidade <= 8.5) {
+      faixaA[quantidadeA] = identificacaoAmostra;
+      quantidadeA++;
+    } else if (grauUmidade > 8.5 && grauUmidade <= 15) { // Alterei o >= para > para evitar sobreposição
+      faixaB[quantidadeB] = identificacaoAmostra;
+      quantidadeB++;
+    } else if (grauUmidade > 15 && grauUmidade <= 25) { // Alterei o >= para > para evitar sobreposição
+      faixaC[quantidadeC] = identificacaoAmostra;
+      quantidadeC++;
+    } else {
+      printf("Grau de umidade fora do intervalo esperado: %f\n", grauUmidade); // Mensagem de debug
+    }
   }
 
   guc = multiplicacaoImpurezaDiferenca / diferencaPesoImpureza;
