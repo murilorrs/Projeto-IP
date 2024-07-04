@@ -1,8 +1,6 @@
-// IMPORTANTE: Todas as leituras já estão sendo feitas corretamente e as funções abaixo ja estão sendo chamadas no lugar correto, dentro do arquivo src/leituraDB
-
+// IMPORTANTE: Todas as leituras já estão sendo feitas corretamente e as funções abaixo ja estão sendo chamadas no lugar correto, dentro do arquivo src/leituraDB.
+// Resta implementar a lógica para a impressao dos relatórios no terminal.
 #include "../include/relatorios.h"
-#include "../include/leituraDB.h"
-#include "../include/menu.h"
 
 // *********************RELATORIOS MENSAIS:*************************
 
@@ -40,16 +38,16 @@ void mesAMes(int origem, int cargas, float gUmidade) {
 
 void cabecalhoRelatorioGeral() {
   // Lógica pro cabeçalho do relatório geral segundo o modelo de relatório geral que está no PDF
-  printf("cheguei ate aqui: geral");
+  printf("cheguei ate aqui: geral cabeçalho\n\n");
 }
 
 void relatorioGeral(int origem, float pesoTotal, float pesoLimpo, int tipo, float gUmidade) {
   // Lógica pro relatório geral
   // Deve exibir todos os dados que estão no DB, seguindo o modelo de relatório geral que está no PDF
-  printf("cheguei ate aqui: geral");
+  printf("cheguei ate aqui: geral\n");
 }
 
-// ********************RELATORIO DE CARREGAMENTO****************************
+// ********************RELATORIO DE CARREGAMENTO(feito)****************************
 
 void relatorioDeCarregamento(int protocolo, int quantidadeDeAmostras, int mes, int ano, float percentualUmidade, float pesoLimpo, int transgenico, int quantidadeA, int quantidadeB, int quantidadeC,
                              int faixaA[], int faixaB[], int faixaC[], float percentualImpureza) {

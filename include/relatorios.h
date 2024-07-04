@@ -1,5 +1,7 @@
 #ifndef RELATORIOS_H
 #define RELATORIOS_H
+#include "../include/leituraDB.h"
+#include "../include/menu.h"
 
 void cabecalhoRelatorioMes();
 void mesEspecifico(int origem, int cargas, float gUmidade);
