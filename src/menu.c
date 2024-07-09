@@ -1,4 +1,3 @@
-// menu.c
 #include "../include/leituraDB.h"
 #include "../include/leitura_arquivos.h"
 
