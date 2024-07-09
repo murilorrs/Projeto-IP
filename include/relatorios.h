@@ -7,6 +7,7 @@ void cabecalhoRelatorioMes();
 void mesEspecifico(int origem, int cargas, float gUmidade);
 void mesAMes(int origem, int cargas, float gUmidade);
 
+void rodapeGeral();
 void cabecalhoRelatorioGeral();
 void relatorioGeral(int origem, float pesoTotal, float pesoLimpo, int tipo, float gUmidade);
 

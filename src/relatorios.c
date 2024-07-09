@@ -4,10 +4,18 @@
 
 // *********************RELATORIOS MENSAIS:*************************
 
+void rodapeGeral() {
+  printf("\n\n---------------------------------------------------------------\n");
+  printf("Programa desenvolvido pelos alunos:\n");
+  printf("Matheus Santana de Moura\n");
+  printf("Murilo Rodrigues Santos\n");
+  printf("Tulio Vitorette Serafim\n");
+}
+
 void cabecalhoRelatorioMes() {
   limpaTerminal();
   printf("\nCOOPERATIVA AGRICOLA GRAO_DO_VALE V1.0\n");
-  printf("ANO: 2024\n");
+  printf("ANO: 2024 => Funcao Quantitativa\n");
   printf("--------------------------------------------------------------------------\n");
 
   printf("Origem    Carga(s)    GU Faixa 1    GU Faixa 2    GU Faixa 3    GU Extra\n");
@@ -36,10 +44,7 @@ void mesAMes(int origem, int cargas, float gUmidade) {
 
 // ********************RELATORIO GERAL:*******************
 
-void cabecalhoRelatorioGeral() {
-  // Lógica pro cabeçalho do relatório geral segundo o modelo de relatório geral que está no PDF
-  printf("cheguei ate aqui: geral cabeçalho\n\n");
-}
+void cabecalhoRelatorioGeral() { printf("cheguei ate aqui: geral cabeçalho\n\n"); }
 
 void relatorioGeral(int origem, float pesoTotal, float pesoLimpo, int tipo, float gUmidade) {
   // Lógica pro relatório geral
@@ -52,7 +57,6 @@ void relatorioGeral(int origem, float pesoTotal, float pesoLimpo, int tipo, floa
 void relatorioDeCarregamento(int protocolo, int quantidadeDeAmostras, int mes, int ano, float percentualUmidade, float pesoLimpo, int transgenico, int quantidadeA, int quantidadeB, int quantidadeC,
                              int faixaA[], int faixaB[], int faixaC[], float percentualImpureza) {
 
-  printf("%f\n", percentualImpureza);
   printf("\nCOOPERATIVA AGRICOLA GRAO_DO_VALE V1.0\n");
   printf("ANO: 2024\n");
   printf("---------------------------------------------------------------");
@@ -81,6 +85,6 @@ void relatorioDeCarregamento(int protocolo, int quantidadeDeAmostras, int mes, i
   for (int i = 0; i < quantidadeC; i++) {
     printf("%d - ", faixaC[i]);
   }
-
+  rodapeGeral();
   printf("\n\n");
 }

@@ -45,4 +45,6 @@ void leitura(int *mes, int *opcaoRelatorioQuantitativo, int *opcaoRelatorio) {
   }
 
   fclose(file);
+
+  rodapeGeral();
 }
