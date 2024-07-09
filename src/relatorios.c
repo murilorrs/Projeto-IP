@@ -7,10 +7,11 @@
 void rodapeGeral() {
   printf("\n---------------------------------------------------------------\n");
   printf("PROGRAMA DESENVOLVIDO PELOS ALUNOS:\n");
-  printf("Caio Gabriel Alves de Oliveira\n");
-  printf("Matheus Santana de Moura\n");
-  printf("Murilo Rodrigues Santos\n");
-  printf("Tulio Vitorette Serafim\n");
+  printf("=> Caio Gabriel Alves de Oliveira\n");
+  printf("=> Ikaro dos santos Alves\n");
+  printf("=> Matheus Santana de Moura\n");
+  printf("=> Murilo Rodrigues Santos\n");
+  printf("=> Tulio Vitorette Serafim\n");
 }
 
 void cabecalhoRelatorioMes() {
@@ -38,9 +39,17 @@ void mesEspecifico(int origem, int cargas, float gUmidade) {
 }
 
 void mesAMes(int origem, int cargas, float gUmidade) {
-  // logica para o relatório de todos os meses
-  // Deve exibir todos os dados do banco de dados, seguindo o modelo de relatório mensal que está no PDF
-  printf("cheguei ate aqui: mes a mes\n");
+  printf("%03d        %03d", origem, cargas);
+
+  if (gUmidade >= 0 && gUmidade <= 8.5)
+    printf("              X\n\n");
+  else if (gUmidade >= 8.6 && gUmidade <= 15)
+    printf("                            X\n\n");
+  else if (gUmidade >= 15.1 && gUmidade <= 25)
+    printf("                                       X\n\n");
+  else
+
+    printf("                                                     X\n\n");
 }
 
 // ********************RELATORIO GERAL:*******************
