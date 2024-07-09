@@ -19,13 +19,13 @@ void carregamento() {
                                      // GENERICO (não é variável, é só pra eu saber depois mesmo)
 
   if (file == NULL) {
-    printf("O arquivo informado não existe.");
+    printf("!!!!! O arquivo informado nao existe !!!!!\n\n");
     return;
   } // Verifica se o arquivo digitado existe, se não existir exibe a mensagem
   // Caso contrário continuará o código normalmente
 
   int mes, ano;
-  printf("Digite o mês de recebimento da carga:\n=>");
+  printf("Digite o mes de recebimento da carga:\n=>");
   scanf("%d", &mes);
   printf("Digite o ano de recebimento da carga:\n=>");
   scanf("%d", &ano);

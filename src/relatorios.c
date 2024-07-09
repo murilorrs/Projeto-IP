@@ -6,7 +6,7 @@
 
 void rodapeGeral() {
   printf("\n\n---------------------------------------------------------------\n");
-  printf("Programa desenvolvido pelos alunos:\n");
+  printf("PROGRAMA DESENVOLVIDO PELOS ALUNOS:\n");
   printf("Matheus Santana de Moura\n");
   printf("Murilo Rodrigues Santos\n");
   printf("Tulio Vitorette Serafim\n");
@@ -15,7 +15,7 @@ void rodapeGeral() {
 void cabecalhoRelatorioMes() {
   limpaTerminal();
   printf("\nCOOPERATIVA AGRICOLA GRAO_DO_VALE V1.0\n");
-  printf("ANO: 2024 => Funcao Quantitativa\n");
+  printf("ANO: 2024 => FUNCAO QUANTITATIVA\n");
   printf("--------------------------------------------------------------------------\n");
 
   printf("Origem    Carga(s)    GU Faixa 1    GU Faixa 2    GU Faixa 3    GU Extra\n");
@@ -61,7 +61,7 @@ void relatorioDeCarregamento(int protocolo, int quantidadeDeAmostras, int mes, i
   printf("ANO: 2024\n");
   printf("---------------------------------------------------------------");
   printf("\nOrigem: %d           Num. de amostras: %d        Data: %d/%d\n", protocolo, quantidadeDeAmostras, mes, ano);
-  printf("Umidade(%%): %.2f%%    Peso limpo(t): %.2f       Transgenico: %s\n\n", percentualUmidade, pesoLimpo, (transgenico == 1) ? "Sim" : "Não");
+  printf("Umidade(%%): %.2f%%    Peso limpo(t): %.2f       Transgenico: %s\n\n", percentualUmidade, pesoLimpo, (transgenico == 1) ? "Sim" : "Nao");
   printf("Umidade: Faixa 1                            Quant.:%d\n", quantidadeA);
   printf("Ident. das Amostras: ");
 
