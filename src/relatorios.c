@@ -7,6 +7,7 @@
 void rodapeGeral() {
   printf("\n\n---------------------------------------------------------------\n");
   printf("PROGRAMA DESENVOLVIDO PELOS ALUNOS:\n");
+  printf("Caio Gabriel Alves de Oliveira\n");
   printf("Matheus Santana de Moura\n");
   printf("Murilo Rodrigues Santos\n");
   printf("Tulio Vitorette Serafim\n");
