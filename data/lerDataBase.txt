@@ -1,0 +1,2 @@
+Essa mensagem vai ser lida pelo nosso programa ler.c
+esse numero tambem: 100
