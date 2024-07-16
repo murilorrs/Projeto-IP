@@ -56,7 +56,7 @@ void mesAMes(int origem, int cargas, float gUmidade) {
 
 void cabecalhoRelatorioGeral() {
   limpaTerminal();
-  printf("\nCOOPERATIVA AGRICOLA GRAO_DO_VALE V1.0\n");
+  printf("\nCOOPERATIVA AGRICOLA GRAO_DO_VALE V3.0\n");
   printf("ANO: 2024\n");
   printf("---------------------------------------------------------------------"
          "-----\n\n");
