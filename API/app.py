@@ -3,7 +3,7 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)  # Habilita CORS para todos os domínios e rotas
+CORS(app)
 
 def ler_dados_dat(file_path):
     dados = []
@@ -42,9 +42,9 @@ def ler_dados_dat(file_path):
         return []
     return dados
 
-@app.route('/dados', methods=['GET'])
+@app.route('/', methods=['GET'])
 def obter_dados():
-    file_path = '../data/database/carregamentos.dat' 
+    file_path = '../data/database/bd.dat' 
     dados = ler_dados_dat(file_path)
     if not dados:
         return jsonify({"erro": "Nenhum dado encontrado ou erro ao ler o arquivo."}), 404
