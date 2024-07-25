@@ -1,2 +1,0 @@
-Essa mensagem ja estava aqui antes do codigo ser executado.
-Essa mensagem foi adicionada apos executar o programa atualizar.c :D

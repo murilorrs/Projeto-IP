@@ -5,4 +5,4 @@ Para compilar entre dentro da basta bin e execute: g++ ../src/menu.c ../src/leit
 
 Para executar:
   Windows: ./programa.exe
-  Linux: ./programa
+  Linux: ./programa.
